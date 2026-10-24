@@ -1,0 +1,17 @@
+[MiniCore]$ sh ./update_mc.sh /home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3/
+
+Specified_directory=/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3
+Current_directory=/home/Arduino_Portable/Dane_systemowe/Arduino/Narzedzia/OTA_szablony/Atmega328P_esp8266/MiniCore
+Current_short= MiniCore
+
+Ctrl C    <- to stop
+----------------------------------------
+Start of installation in: 10 9 8 7 6 5 4 3 2 1
+mkdir: utworzony katalog '/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3/tools'
+'ota_atmega.py' -> '/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3/tools/ota_atmega.py'
+'boards.txt' -> '/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3/boards.txt' (kopia zapasowa: '/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3/boards.txt.~1~')
+'platform.txt' -> '/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3/platform.txt' (kopia zapasowa: '/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3/platform.txt.~1~')
+'programmers.txt' -> '/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3/programmers.txt' (kopia zapasowa: '/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3/programmers.txt.~1~')
+platform.txt: mod already added
+boards.txt: mod already added
+All done. Start or close and restart the Arduino IDE.

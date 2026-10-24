@@ -1,0 +1,4 @@
+
+ OTA template
+
+ ATmega328P + ESP8266 (ESP-01S) without the 100n capacitor for resetting the ATmega
