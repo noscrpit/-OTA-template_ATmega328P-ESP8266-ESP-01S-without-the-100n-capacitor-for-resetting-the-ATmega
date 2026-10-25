@@ -2,10 +2,13 @@
 # Dodaje do MiniCore wgrywanie przez sieć (ESP) - przycisk "Prześlij" w Arduino IDE.
 # Skrypt: robi kopie *.ota.bak, kopiuje tools/ota_atmega.py, dopisuje narzędzie do platform.txt
 # i linię "328.upload.tool.network=atmegaota" do boards.txt. Można uruchamiać wielokrotnie.
+# Uruchomienie tego skryptu powoduje zastosowanie wszystkich potrzebnych zmian
+
 
 # Adds network uploading (ESP) to MiniCore—the "Upload" button in the Arduino IDE.
 # Script: creates *.ota.bak backup files, copies tools/ota_atmega.py, adds the tool to platforms.txt
 # and adds the line "328.upload.tool.network=atmegaota" to boards.txt. Can be run multiple times.
+# Running this script applies all the necessary changes
 
 # clear
 set -e
