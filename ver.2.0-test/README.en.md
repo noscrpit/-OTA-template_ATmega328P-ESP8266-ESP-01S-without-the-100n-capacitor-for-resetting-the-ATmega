@@ -125,6 +125,10 @@ Use `patch_update.sh` in the MiniCore directory, or:
 ### 3. Copy the script and generate the `.diff` file
 
 ```bash
+cp -vf --backup=numbered  minicore_add_boards.py programmers.diff  platform.diff  "3.1.3 - dir"
+in 3.1.3 dir:
+patch -p1 <  programmers.diff programmers.txt && patch -p1 <  platform.diff platform.txt
+
 cd <package directory 3.1.3>
 cp /path/to/minicore_add_boards.py .
 python3 minicore_add_boards.py boards.txt
