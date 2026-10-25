@@ -1,0 +1,15 @@
+--- -	2026-10-25 08:53:28.386677045 +0100
++++ /home/Arduino_Portable/Dane_systemowe/Arduino/Narzedzia/OTA_szablony/Atmega328P_esp8266/MiniCore/MiniCore/programmers.txt	2026-10-22 15:08:19.163184368 +0200
+@@ -101,3 +101,12 @@
+ simavr.protocol=This_is_not_a_programmer_but_only_a_signal_to_use_the_simulator_when_debugging
+ simavr.program.tool=avrdude
+ simavr.program.extra_params=
++
++
++ch341a.name=CH341A (⚠️ Tylko kwarc >= 8MHz)
++ch341a.communication=usb
++ch341a.protocol=ch341a
++ch341a.program.protocol=ch341a
++ch341a.program.tool=avrdude
++ch341a.program.tool.default=avrdude
++ch341a.program.extra_params=-Pusb
