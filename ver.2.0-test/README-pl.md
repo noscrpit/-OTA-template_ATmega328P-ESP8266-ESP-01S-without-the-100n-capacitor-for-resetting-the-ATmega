@@ -121,6 +121,10 @@ Użyj `patch_update.sh` w katalogu MiniCore lub:
 ### 3. Skopiuj skrypt i wygeneruj plik `.diff`
 
 ```bash
+cp -vf --backup=numbered programmers.diff  platform.diff  <katalog pakietu 3.1.3>
+w katalogu  3.1.3:
+patch -p1 <  programmers.diff programmers.txt && patch -p1 <  platform.diff platform.txt
+
 cd <katalog pakietu 3.1.3>
 cp /ścieżka/do/minicore_add_boards.py .
 python3 minicore_add_boards.py boards.txt
