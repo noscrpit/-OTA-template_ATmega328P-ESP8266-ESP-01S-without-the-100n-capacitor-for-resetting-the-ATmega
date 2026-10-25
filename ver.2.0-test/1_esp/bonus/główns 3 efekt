@@ -1,0 +1,65 @@
+void handleRoot() {
+  String h = F("<!DOCTYPE html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>"
+               "<title>Szablon OTA</title><style>"
+               "body{font-family:Arial;background:#121212;color:#fff;text-align:center;padding:30px}"
+               ".t{display:block;max-width:360px;margin:20px auto;padding:16px;border-radius:8px;background:#00adb5;color:#fff;"
+               "text-decoration:none;font-weight:bold;position:relative;overflow:hidden;transition:all 0.3s ease}"
+               ".t:hover{transform:translateY(-3px)}"
+               
+               "/* Animacja 1: Rozszerzona Tęcza (Color Shift) */"
+               ".anim-color{animation:colorShift 8s infinite linear}"
+               "@keyframes colorShift{"
+                 "0%{background:#ff595e} 16%{background:#ffca3a} 33%{background:#8ac926} "
+                 "50%{background:#1982c4} 66%{background:#6a4c93} 83%{background:#ff595e} 100%{background:#ff595e}"
+               "}"
+               
+               "/* Animacja 2: Shimmer Flash */"
+               ".anim-shimmer{background:#00adb5}"
+               ".anim-shimmer::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;"
+               "background:linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent);transform:skewX(-25deg);animation:shimmer 2.5s infinite}"
+               "@keyframes shimmer{"
+                 "100%{left:150%}"
+               "}"
+               
+               "/* Animacja 3: Tęczowa Poświata (Rainbow Glow) */"
+               ".anim-rainbow-glow{background:#222;border:2px solid #fff;animation:rainbowGlow 4s infinite linear}"
+               "@keyframes rainbowGlow{"
+                 "0%{box-shadow:0 0 12px #ff595e;border-color:#ff595e}"
+                 "25%{box-shadow:0 0 12px #ffca3a;border-color:#ffca3a}"
+                 "50%{box-shadow:0 0 12px #8ac926;border-color:#8ac926}"
+                 "75%{box-shadow:0 0 12px #1982c4;border-color:#1982c4}"
+                 "100%{box-shadow:0 0 12px #ff595e;border-color:#ff595e}"
+               "}"
+               
+               "/* Styl dla wyboru animacji */"
+               "select{padding:10px 16px;background:#222;color:#fff;border:2px solid #00adb5;border-radius:6px;margin-bottom:25px;cursor:pointer;font-size:14px}"
+               "</style></head><body><h2>Szablon OTA</h2>"
+               "<label for='animSelect'>Wybierz animację: </label>"
+               "<select id='animSelect' onchange='changeAnim(this.value)'>"
+                 "<option value='anim-color'>Żywa tęcza (Color Shift)</option>"
+                 "<option value='anim-shimmer'>Przesuwający się błysk (Shimmer Flash)</option>"
+                 "<option value='anim-rainbow-glow'>Tęczowy neon (Rainbow Glow)</option>"
+               "</select>");
+               
+  h += F("<a id='btn1' class='t anim-color' href='/upload_atmega_page'>Wgraj program do ATmegi (.bin)</a>");
+  h += F("<a id='btn2' class='t anim-color' href='/upload_esp_page'>Zaktualizuj ESP (.bin)</a>");
+  
+  h += F("<script>"
+         "function changeAnim(className){"
+           "var b1=document.getElementById('btn1');"
+           "var b2=document.getElementById('btn2');"
+           "b1.className='t ' + className;"
+           "b2.className='t ' + className;"
+           "localStorage.setItem('selectedAnim', className);" // Tutaj zapisuje w przeglądarce
+         "}"
+         "window.onload = function() {"
+           "var savedAnim = localStorage.getItem('selectedAnim');" // Tutaj odczytuje przy starcie
+           "if(savedAnim) {"
+             "document.getElementById('animSelect').value = savedAnim;"
+             "changeAnim(savedAnim);"
+           "}"
+         "}"
+         "</script></body></html>");
+         
+  server.send(200, "text/html", h);
+}

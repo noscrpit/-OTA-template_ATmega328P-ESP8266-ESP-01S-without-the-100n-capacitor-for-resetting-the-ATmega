@@ -1,0 +1,27 @@
+FQBN: MiniCore:avr:328:clock=14_3MHz_external,baudrate=447443
+Using board '328' from platform in folder: /home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3
+Using core 'MCUdude_corefiles' from platform in folder: /home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3
+
+Detecting libraries used...
+Using cached library dependencies for file: /home/Arduino_Portable/Dane_systemowe/.cache/arduino/sketches/04680FEBCA2C5D3A0590879A51E2A0B7/sketch/1_atmega.ino.cpp.merged
+Generating function prototypes...
+Using cached sketch with function prototypes.
+Kompilowanie szkicu...
+Użycie wcześniej skompilowanego pliku: /home/Arduino_Portable/Dane_systemowe/.cache/arduino/sketches/04680FEBCA2C5D3A0590879A51E2A0B7/sketch/1_atmega.ino.cpp.o
+Compiling libraries...
+Compiling core...
+Using precompiled core: /home/Arduino_Portable/Dane_systemowe/.cache/arduino/cores/0990704acf0c68012c92ec48a97a3260/core.a
+Linking everything together...
+/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino7/bin/avr-gcc -Wall -Wextra -Os -DNDEBUG -Wl,--gc-sections -mmcu=atmega328p -w -flto -g -o /home/Arduino_Portable/Dane_systemowe/.cache/arduino/sketches/04680FEBCA2C5D3A0590879A51E2A0B7/1_atmega.ino.elf /home/Arduino_Portable/Dane_systemowe/.cache/arduino/sketches/04680FEBCA2C5D3A0590879A51E2A0B7/sketch/1_atmega.ino.cpp.o /home/Arduino_Portable/Dane_systemowe/.cache/arduino/sketches/04680FEBCA2C5D3A0590879A51E2A0B7/../../cores/0990704acf0c68012c92ec48a97a3260/core.a -L/home/Arduino_Portable/Dane_systemowe/.cache/arduino/sketches/04680FEBCA2C5D3A0590879A51E2A0B7 -lm
+/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino7/bin/avr-objcopy -O binary -R .eeprom /home/Arduino_Portable/Dane_systemowe/.cache/arduino/sketches/04680FEBCA2C5D3A0590879A51E2A0B7/1_atmega.ino.elf /home/Arduino_Portable/Dane_systemowe/.cache/arduino/sketches/04680FEBCA2C5D3A0590879A51E2A0B7/1_atmega.ino.bin
+/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino7/bin/avr-objcopy -O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0 /home/Arduino_Portable/Dane_systemowe/.cache/arduino/sketches/04680FEBCA2C5D3A0590879A51E2A0B7/1_atmega.ino.elf /home/Arduino_Portable/Dane_systemowe/.cache/arduino/sketches/04680FEBCA2C5D3A0590879A51E2A0B7/1_atmega.ino.eep
+/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino7/bin/avr-objcopy -O ihex -R .eeprom /home/Arduino_Portable/Dane_systemowe/.cache/arduino/sketches/04680FEBCA2C5D3A0590879A51E2A0B7/1_atmega.ino.elf /home/Arduino_Portable/Dane_systemowe/.cache/arduino/sketches/04680FEBCA2C5D3A0590879A51E2A0B7/1_atmega.ino.hex
+chmod +x /home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3/scripts/create_disassembler_listing.sh
+/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3/scripts/create_disassembler_listing.sh /home/Arduino_Portable/Dane_systemowe/.arduino15/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino7/bin/avr-objdump "--disassemble --source --line-numbers --demangle --section=.text" /home/Arduino_Portable/Dane_systemowe/.cache/arduino/sketches/04680FEBCA2C5D3A0590879A51E2A0B7/1_atmega.ino.elf /home/Arduino_Portable/Dane_systemowe/.cache/arduino/sketches/04680FEBCA2C5D3A0590879A51E2A0B7/1_atmega.ino_atmega328p_14318180UL.lst
+/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino7/bin/avr-size -A /home/Arduino_Portable/Dane_systemowe/.cache/arduino/sketches/04680FEBCA2C5D3A0590879A51E2A0B7/1_atmega.ino.elf
+Szkic używa 4292 bajtów (13%) pamięci programu. Maksimum to 32384 bajtów.
+Zmienne globalne używają 211 bajtów (10%) pamięci dynamicznej, pozostawiając 1837 bajtów dla zmiennych lokalnych. Maksimum to 2048 bajtów.
+python3 "/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3/tools/ota_atmega.py" "192.168.22.222" "/home/Arduino_Portable/Dane_systemowe/.cache/arduino/sketches/04680FEBCA2C5D3A0590879A51E2A0B7/1_atmega.ino.bin"
+Wysyłanie 4292 B do http://192.168.22.222:80/do_upload_atmega (programowanie trwa kilkanaście sekund)...
+OK! Wgrano 4292 B.
+ATmega startuje nowy program.

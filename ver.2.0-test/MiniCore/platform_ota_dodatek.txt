@@ -1,0 +1,6 @@
+
+# ---- OTA ATmegi przez ESP8266 (Arduino IDE: Port = ESP w sieci, przycisk "Prześlij") ----
+tools.atmegaota.upload.params.verbose=
+tools.atmegaota.upload.params.quiet=
+tools.atmegaota.upload.pattern=python3 "{runtime.platform.path}/tools/ota_atmega.py" "{serial.port}" "{build.path}/{build.project_name}.bin"
+tools.atmegaota.upload.network_pattern=python3 "{runtime.platform.path}/tools/ota_atmega.py" "{serial.port}" "{build.path}/{build.project_name}.bin"

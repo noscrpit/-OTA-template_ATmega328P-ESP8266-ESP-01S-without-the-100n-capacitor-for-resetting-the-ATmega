@@ -1,0 +1,101 @@
+void handleRoot() {
+  String h = F("<!DOCTYPE html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>"
+               "<title>Szablon OTA</title><style>"
+               "body{font-family:Arial;background:#121212;color:#fff;text-align:center;padding:30px}"
+               ".t{display:block;max-width:360px;margin:20px auto;padding:16px;border-radius:8px;background:#00adb5;color:#fff;"
+               "text-decoration:none;font-weight:bold;position:relative;overflow:hidden;transition:transform 0.3s ease}"
+               ".t:hover{transform:translateY(-3px)}"
+
+               "/* Animacja 1: Rozszerzona Tęcza (Color Shift) */"
+               ".anim-color{animation:colorShift var(--anim-speed, 4s) infinite linear}"
+               "@keyframes colorShift{"
+                 "0%{background:#ff595e} 16%{background:#ffca3a} 33%{background:#8ac926} "
+                 "50%{background:#1982c4} 66%{background:#6a4c93} 83%{background:#ff595e} 100%{background:#ff595e}"
+               "}"
+
+               "/* Animacja 2: Shimmer Flash */"
+               ".anim-shimmer{background:#00adb5}"
+               ".anim-shimmer::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;"
+               "background:linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent);transform:skewX(-25deg);"
+               "animation:shimmer var(--anim-speed, 2.5s) infinite linear}"
+               "@keyframes shimmer{"
+                 "100%{left:150%}"
+               "}"
+
+               "/* Animacja 3: Tęczowa Poświata (Rainbow Glow) - Domyślna */"
+               ".anim-rainbow-glow{background:#222;border:2px solid #fff;animation:rainbowGlow var(--anim-speed, 4s) infinite linear}"
+               "@keyframes rainbowGlow{"
+                 "0%{box-shadow:0 0 12px #ff595e;border-color:#ff595e}"
+                 "25%{box-shadow:0 0 12px #ffca3a;border-color:#ffca3a}"
+                 "50%{box-shadow:0 0 12px #8ac926;border-color:#8ac926}"
+                 "75%{box-shadow:0 0 12px #1982c4;border-color:#1982c4}"
+                 "100%{box-shadow:0 0 12px #ff595e;border-color:#ff595e}"
+               "}"
+
+               "/* Styl dla kontrolek */"
+               ".ctrl-box{margin-bottom:25px;display:inline-block;padding:15px 25px;background:#1e1e1e;border-radius:8px;border:1px solid #333}"
+               ".row{margin-top:15px} /* Odstęp dla suwaka poniżej wyboru animacji */"
+               "select, input[type=range]{vertical-align:middle;margin:0 10px}"
+               "select{padding:8px 12px;background:#222;color:#fff;border:1px solid #00adb5;border-radius:6px;cursor:pointer;font-size:14px}"
+               "input[type=range]{width:160px;accent-color:#00adb5}"
+               "span{font-size:14px;color:#bbb;display:inline-block;width:35px;text-align:left}"
+               "</style></head><body><h2>Szablon OTA</h2>"
+
+               "<div class='ctrl-box'>"
+                 "<div>"
+                   "<label for='animSelect'>Animacja: </label>"
+                   "<select id='animSelect' onchange='changeAnim(this.value)'>"
+                     "<option value='anim-color'>Żywa tęcza (Color Shift)</option>"
+                     "<option value='anim-shimmer'>Przesuwający się błysk (Shimmer Flash)</option>"
+                     "<option value='anim-rainbow-glow' selected>Tęczowy neon (Rainbow Glow)</option>"
+                   "</select>"
+                 "</div>"
+
+                 "<div class='row'>"
+                   "<label for='speedRange'>Szybkość: </label>"
+                   "<!-- min=3 (0.3s), max=50 (5s) -> wartość dzielona przez 10 w JS -->"
+                   "<input type='range' id='speedRange' min='3' max='50' value='25' oninput='changeSpeed(this.value)'>"
+                   "<span id='speedVal'>2.5s</span>"
+                 "</div>"
+               "</div>");
+
+  h += F("<a id='btn1' class='t anim-rainbow-glow' href='/upload_atmega_page'>Wgraj program do ATmegi (.bin)</a>");
+  h += F("<a id='btn2' class='t anim-rainbow-glow' href='/upload_esp_page'>Zaktualizuj ESP (.bin)</a>");
+
+  h += F("<script>"
+         "function changeAnim(className){"
+           "var b1=document.getElementById('btn1');"
+           "var b2=document.getElementById('btn2');"
+           "b1.className='t ' + className;"
+           "b2.className='t ' + className;"
+           "localStorage.setItem('selectedAnim', className);"
+         "}"
+
+         "function changeSpeed(val){"
+           "var seconds = (val / 10).toFixed(1) + 's';"
+           "document.getElementById('speedVal').innerText = seconds;"
+           "document.documentElement.style.setProperty('--anim-speed', seconds);"
+           "localStorage.setItem('selectedSpeed', val);"
+         "}"
+
+         "window.onload = function() {"
+           "var savedAnim = localStorage.getItem('selectedAnim');"
+           "if(savedAnim) {"
+             "document.getElementById('animSelect').value = savedAnim;"
+             "changeAnim(savedAnim);"
+           "} else {"
+             "changeAnim('anim-rainbow-glow');"
+           "}"
+
+           "var savedSpeed = localStorage.getItem('selectedSpeed');"
+           "if(savedSpeed) {"
+             "document.getElementById('speedRange').value = savedSpeed;"
+             "changeSpeed(savedSpeed);"
+           "} else {"
+             "changeSpeed(25);" // Domyślnie 2.5 sekundy
+           "}"
+         "}"
+         "</script></body></html>");
+
+  server.send(200, "text/html", h);
+}

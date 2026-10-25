@@ -1,0 +1,35 @@
+
+Specified_directory=/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3
+Current_directory=/home/Arduino_Portable/Dane_systemowe/Arduino/Narzedzia/OTA_szablony/Atmega328P_esp8266/MiniCore
+Current_short= MiniCore 
+
+boards.txt - exists, OK.
+platform.txt - exists, OK.
+programmers.txt - exists, OK.
+
+Ctrl C    <- to stop
+----------------------------------------
+Start of installation in: 10 9 8 7 6 5 4 3 2 1 
+mkdir: utworzony katalog '/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3/tools'
+'ota_atmega.py' -> '/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3/tools/ota_atmega.py'
+'minicore_add_boards.py' -> '/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3/minicore_add_boards.py'
+'programmers.diff' -> '/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3/programmers.diff'
+'platform.diff' -> '/home/Arduino_Portable/Dane_systemowe/.arduino15/packages/MiniCore/hardware/avr/3.1.3/platform.diff'
+
+ Patching file: programmers.txt - platform.txt
+ --------------------------------
+patching file programmers.txt
+patching file platform.txt
+platform.txt: mod already added
+boards.txt: 328.upload.tool.network  was added
+
+ Create, check and patching boards.txt
+ --------------------------------
+Plyta '328': dodano nowych plyt: 2, usunieto linii: 0
+Wariant 328P zamrozony: tak (menu.variant.modelP)
+Diff zapisany: minicore_3.1.3_328p_14M31818_25M.diff
+checking file boards.txt
+patching file boards.txt
+... done
+
+All done - ota and new boards added. Start or close and restart the Arduino IDE.

@@ -1,0 +1,16 @@
+
+[narzedzia]$ sh ./wgraj_usbasp.sh
+Podaj plik .with_bootloader.hex
+[narzedzia]$
+
+[narzedzia]$  sh ./wgraj_usbasp.sh ../1_atmega/build/MiniCore.avr.328_14m31818/1_atmega.ino.with_bootloader.hex
+Warning: system wide configuration file version (8.2-20260725 (1ecca1fd))
+does not match Avrdude build version (8.2)
+Reading 4676 bytes for flash from input file 1_atmega.ino.with_bootloader.hex
+Writing 4676 bytes to flash
+Writing | ################################################## | 100% 0.91 s 
+Reading | ################################################## | 100% 0.78 s 
+4676 bytes of flash verified
+
+Avrdude done.  Thank you.
+[narzedzia]$

@@ -1,0 +1,18 @@
+DODATEK DO platform.txt (MiniCore 3.1.3) - automatyczne tworzenie pliku .bin BEZ bootloadera
+=============================================================================================
+Plik:  <katalog_arduino15>/packages/MiniCore/hardware/avr/3.1.3/platform.txt
+Zrób kopię zapasową (platform.txt.bak), zamknij Arduino IDE i dopisz DWIE linie:
+
+1) zaraz pod linią zaczynającą się od   recipe.objcopy.hex.pattern=
+   dopisz:
+## Create raw binary without bootloader (for OTA through ESP)
+recipe.objcopy.bin.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf2hex.bin.flags} {compiler.elf2hex.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.bin"
+
+2) zaraz pod linią zaczynającą się od   recipe.hooks.savehex.presavehex.3.pattern.linux=
+   dopisz:
+recipe.hooks.savehex.presavehex.4.pattern.linux=cp "{build.path}/{build.project_name}.bin" "{sketch_path}"
+
+Po tym  Szkic -> Eksportuj skompilowany plik binarny  zapisuje w folderze projektu:
+   1_atmega.ino.bin                      <- ten plik wgrywasz przez stronę OTA ESP
+   1_atmega.ino.with_bootloader.hex      <- ten plik wgrywasz przez USBasp (po spatchowaniu)
+Hook działa na Linuksie (linie .linux). Po aktualizacji MiniCore dopisz linie ponownie.
