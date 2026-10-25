@@ -110,11 +110,13 @@ kwarcu zerowego błędu.
 | macOS | `~/Library/Arduino15/packages/MiniCore/hardware/avr/3.1.3/` |
 | Windows | `%LOCALAPPDATA%\Arduino15\packages\MiniCore\hardware\avr\3.1.3\` |
 
-W katalogu powinien znajdować się plik `boards.txt`.
+W katalogu powinien znajdować się plik `platform.txt" "boards.txt" "programmers.txt`.
 
 ### 2. Zamknij Arduino IDE
 
 IDE wczytuje definicje płytek przy starcie.
+
+Użyj `patch_update.sh` w katalogu MiniCore lub:
 
 ### 3. Skopiuj skrypt i wygeneruj plik `.diff`
 
