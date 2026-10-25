@@ -120,6 +120,8 @@ The directory should contain the `boards.txt` file.
 
 The IDE reads board definitions at startup.
 
+Use `patch_update.sh` in the MiniCore directory, or:
+
 ### 3. Copy the script and generate the `.diff` file
 
 ```bash
